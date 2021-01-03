@@ -139,6 +139,10 @@ header {
   transition: 0.5s;
 }
 
+#btn-google i {
+  transform: rotate(0);
+}
+
 
 /* ###### Home section ######*/
 
@@ -369,6 +373,7 @@ header {
 
 .project-pic {
   width: 75%;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -863,6 +868,8 @@ hr.bar {
   ;
 }
 
+
+
 .contact-slogan {
   padding: 100px 0;
 }
@@ -906,6 +913,11 @@ hr.bar {
 
 .sns {
   margin-left: -10px;
+  margin-top: -10px;
+}
+
+body>div>article:nth-child(5)>div.pic>img {
+  padding: 2%;
 }
 
 .sns a {
@@ -967,21 +979,33 @@ hr.bar {
 
 /* ### Project Modal ### */
 
+.project-detail .header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.header-inner a {
+  color: #000;
+}
+
+
 .contact-main.project-main1 {
-  background: url(images/project-main-01-01.jpg) no-repeat center center;
+  background: url(images/project-modal-main-01.jpg) no-repeat center center;
   background-size: cover;
   height: 100vh;
   position: relative;
 }
 
 .contact-main.project-main2 {
-  background: url(images/project-main-02-01.jpg) no-repeat center center;
+  background: url(./images/project-modal-main-02.jpg) no-repeat center center;
   background-size: cover;
   height: 100vh;
 }
 
 .contact-main.project-main3 {
-  background: url(images/project-main-03-01.jpg) no-repeat center center;
+  background: url(images/project-modal-main-03.jpg) no-repeat center center;
   background-size: cover;
   height: 100vh;
 }
@@ -1006,6 +1030,13 @@ hr.bar {
 
 .project-detail.contact-slogan p:before {
   left: -100px;
+}
+
+.pic img {
+  padding: 5%;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
 }
 
 .pic.project-info {
@@ -1071,7 +1102,7 @@ hr.bar {
   text-align: center;
   font-family: Arial, sans-serif;
   background: #fff;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0);
   color: #000;
   border: none;
   padding: 0;

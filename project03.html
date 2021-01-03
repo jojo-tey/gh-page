@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
-  <title>Project #03 : XXX</title>
+  <title>Project #03 : ROUTE</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="responsive.css">
 </head>
+
 <body>
- 
+
+  <!-- Navigation Bar -->
   <div class="modal project-detail">
     <div class="header">
       <div class="header-inner">
-        <div class="modal-display">+ Project Descriptions #03</div>
+        <a href="#p_top" class="modal-display">+ Project Descriptions #02</a>
+        <a href="#nat" class="modal-display"># NAT</a>
+        <a href="#pbr" class="modal-display"># PBR+SLA</a>
+        <a href="#rip" class="modal-display"># RIP</a>
+        <a href="#eigrp" class="modal-display"># EIGRP</a>
+        <a href="#ospf" class="modal-display"># OSPF</a>
       </div>
     </div>
-    <div class="contact-main project-main1">
+
+
+
+    <div class="contact-main project-main3" id="p_top">
       <div class="contact-heading">
         <span>Project #03</span>
-        <h1>We design complete environments</h1>
+        <h1>GNS3 : ROUTING</h1>
       </div>
     </div>
     <article class="contact-info">
@@ -26,30 +37,80 @@
         <div class="center-child">
           <h2>+ Project Descriptions #03</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, architecto quasi asperiores dignissimos aperiam est, hic voluptatem quis optio. Atque, asperiores, quas hic illo corporis necessitatibus! Cupiditate, ipsam laudantium eum cum dolorum earum eligendi error rerum corporis commodi deserunt saepe quisquam, velit laboriosam! Ea deserunt at eveniet, laboriosam quam tempora, tempore quia minima, facere, reiciendis aliquid. Repudiandae voluptates dolorum officiis illo rerum placeat, vitae temporibus, velit unde saepe architecto a? Unde eaque at vero nesciunt eligendi ex laudantium earum debitis, ratione iusto, mollitia maiores id consequuntur vel autem! Culpa rem, voluptatum nesciunt eum expedita. Doloribus eaque officia dolor. In, hic.
+            <b> Understanding networks in the IT field is like getting a license to ride a car.<br>
+              By understanding how networks are organized, how packets are routed, how routes are determined, and the
+              various protocols, you can understand the overall behavior of the Web. Therefore, i constructed 5 routing
+              topologies using multiple protocols.</b>
           </p>
         </div>
       </div>
       <div class="pic project-info">
         <ul>
-          <li><b>Area</b> : 1670 m2</li>
-          <li><b>Completed Date</b> : September 2018</li>
-          <li><b>Architect</b> : Andrew Yu</li>
-          <li><b>Working day</b> : 225</li>
-          <li><b>Member</b> : 320</li>
-          <li><b>Budget</b> : 3M</li>
+          <li><b>Project</b> : Network Topology for ROUTING</li>
+          <li><b>Completed Date</b> : December 2020</li>
+          <li><b>Architect</b> : Taehee Jo</li>
+          <li><b>Working day</b> : 20+</li>
+          <li><b>Used Programm</b> : GNS3, SecureCRT</li>
         </ul>
       </div>
     </article>
-    <article class="contact-info">
+
+
+
+    <!-- Describe Section -->
+
+
+    <!-- Floating Static -->
+    <article class="contact-info" id="nat">
       <div class="pic">
-        <img src="images/project-main-01-02.jpg">
+        <img src="./images/P_img_route/static1.png">
       </div>
       <div class="center-parent">
         <div class="center-child">
-          <h2>Today it is busily, loudly rebounding.</h2>
+          <h2>Floating Static Routing</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque ipsum nihil minus inventore eius vel sapiente nostrum ratione, culpa facilis architecto quam amet, ab maiores rem excepturi laboriosam obcaecati suscipit perferendis perspiciatis. Ut ipsam est quidem similique, architecto eligendi eveniet odit molestiae delectus ex quaerat beatae, quia, officia voluptatem blanditiis eum. Sint, sit, qui. Iusto aliquid, fugit voluptates tempore iure non repellendus ea eos error doloremque deserunt culpa facilis impedit earum rem. Aspernatur aperiam voluptates quisquam ut rerum, voluptatibus corrupti labore reiciendis omnis possimus, vero quas cumque facilis itaque eum voluptas autem amet quam tenetur quo libero sed facere? Esse.
+            Floating Static Routing is a static routing function that automatically configures the backup path in the
+            routing table when the target network path is set to static, but if the configured path goes down.<br>
+            Static routing has a disadvantage that if the route to the destination network is down, the administrator
+            must detect the change in topology and manually set another route. This is secured by Floating Static
+            Routing.
+        </div>
+      </div>
+    </article>
+
+    <article class="contact-info">
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>Path will be changed automatically</h2>
+          <p>When going from S1 to S2, the path is S1->R1->R2->R4->S2.<br>
+            At this time, when the R1<->R2 path is down, the path is changed to S1->R1->R3->R4->S2 by floating static.
+              Note that if you turn down fa 0/0 of R1, the route to which you are going is changed, but the route to
+              return is not changed, so routing is not possible. The timeout needs to be set in the sla echo packet to
+              recognize network changes.
+          </p>
+        </div>
+      </div>
+      <div class="pic">
+        <img src="./images/P_img_route/static2.png">
+      </div>
+    </article>
+
+    <!-- PBR + SLA  -->
+
+    <article class="contact-info" id="pbr">
+      <div class="pic">
+        <img src="./images/P_img_route/pbr1.png">
+      </div>
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>PBR(Policy Based Routing) with IP SLA(Internet protocol service level agreement)</h2>
+          <p>
+            Cisco IOS IP SLAs continuously collect data about such things as response times, latency, jitter and packet
+            loss. This not only provides the network administrator with baseline information about network performance,
+            it also helps the administrator to verify Quality of Service (QoS) levels and quickly identify the root of a
+            problem if performance levels drop. When integrated with a network management system (NMS), visual alerts of
+            threshold violations can be captured in real-time. IP SLAs are especially useful for wide area networks
+            (WANs) that connect multiple geographies and needs to be monitored from one central location.
           </p>
         </div>
       </div>
@@ -57,37 +118,203 @@
     <article class="contact-info">
       <div class="center-parent">
         <div class="center-child">
-          <h2>invisible city was a space of cybernetic</h2>
+          <h2>Path adjust</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro blanditiis consequatur consequuntur odio quidem! Suscipit consequuntur similique incidunt libero aliquam veniam et fugit asperiores recusandae, error quibusdam dolor eos molestiae delectus fuga vel, amet dignissimos cumque quidem! Temporibus voluptas doloribus, libero, quisquam fugit culpa aut itaque. Eum repudiandae perferendis perspiciatis enim neque ducimus deleniti porro suscipit repellat sapiente ullam harum tenetur alias earum quibusdam eos qui, quidem ut, autem aut. Placeat facere, quaerat sit dignissimos possimus blanditiis officiis voluptatibus suscipit autem libero modi sunt hic rem laborum deleniti! Sint repellendus veritatis ipsam exercitationem facere quidem culpa, ea, aut voluptatibus eveniet.
-          </p>
+            Because the routing protocol is rip, load is distributed. This is done by adding a hop count (rip metric) to
+            the route of S2-R3-R1-S1 and changing the optimal route to S1-R2-R3-S2. (In normal circumstances, I want it
+            to be routed down the path) And without adjusting this rip policy, when S1_lo0(1.11.11.1) goes to
+            S2_lo0(1.22.22.1) I make the path I want. (The route I want is S2-R3-R1-S1) <br>
+            That is, the optimal path of rip is S2-R3-R2-S1 / The path I want is S2-R3-R1-S1 <-- Adjust with PBR </p>
+              </div> </div> <div class="pic">
+              <img src="./images/P_img_route/pbr2.png">
         </div>
-      </div>
-      <div class="pic">
-        <img src="images/project-main-01-03.jpg">
-      </div>
     </article>
-    <article class="contact-info">
+
+    <!-- RIP  -->
+
+    <article class="contact-info" id="rip">
       <div class="pic">
-        <img src="images/project-main-01-04.jpg">
+        <img src="./images/P_img_route/rip1.png">
       </div>
       <div class="center-parent">
         <div class="center-child">
-          <h2>This work-network shared in Zoom-mode</h2>
+          <h2>RIP(Routing Information Protocol)</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias esse, quae. Eligendi reprehenderit autem, dignissimos modi veritatis aut vero! Provident, vero ea iure non. Commodi, doloremque quod recusandae ab aperiam numquam quibusdam laudantium maxime soluta asperiores, ducimus, mollitia ea nostrum, nulla corrupti porro! Sit veniam fuga corporis repudiandae rem nam voluptatibus reprehenderit blanditiis, ullam aspernatur provident asperiores hic eaque quos vitae totam natus explicabo quod deserunt corrupti, maiores dolor at a alias commodi. Voluptatem, dolore minus. Molestias similique repellat nostrum, saepe voluptatem tempora dolore sapiente iure, commodi ea officia! Ab, accusantium. Nam nesciunt aperiam sequi nemo quasi laborum non modi!
+            The routing information protocol is a routing protocol operating on UDP/IP.
+            RIP is a task of dynamically exchanging routes with neighboring hosts using an algorithm called DVA by
+            quantifying the number of routers that may be routed through the number of hops. Determines the shortest
+            path for a packet to reach its destination network address.
           </p>
         </div>
       </div>
     </article>
+
+
+
+    <article class="contact-info">
+
+      <div class="pic">
+        <img src="./images/P_img_route/rip2.png">
+      </div>
+      <div class="pic">
+        <img src="./images/P_img_route/rip3.png">
+      </div>
+    </article>
+
+    <article class="contact-info" >
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>Basic mapping (using ppp: equipment certification, standard)</h2>
+          <p>
+            -Assign management ip to loopback0 to each router<br>
+            -Verification of communication with RIP version 2 from R1 to R5 excluding R6<br>
+            -Currently, there is no customer information and only link information is used to form a rip neighbor (Cisco
+            does not say neighbor in rip)<br>
+            -Customer advertisement: R5 / R6
+          </p>
+        </div>
+      </div>
+      <div class="pic">
+        <img src="./images/P_img_route/rip4.png">
+      </div>
+    </article>
+
+
+    <!-- EIGRP -->
+    <article class="contact-info" id="eigrp">
+      <div class="pic">
+        <img src="./images/P_img_route/eigrp1.png">
+      </div>
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>EIGRP(Enhanced Interior Gateway Routing Protocol)</h2>
+          <p>
+            It is the distance vector internal gateway protocol (IGP) invented by Cisco. It is used by routers for the
+            purpose of exchanging routing data in autonomous systems. <br>
+            IGRP was created to partially overcome the limitations of RIP (maximum number of hops 15, one routing
+            metric) when used in large networks. IGRP supports multiple metrics for individual paths, including
+            bandwidth, delay, load, MTU, and reliability.
+          </p>
+        </div>
+      </div>
+    </article>
+
+
+    <article class="contact-info">
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>IGRP is considered a classed routing protocol</h2>
+          <p>
+            Since this protocol has no space for a subnet mask, the router assumes that all subnetwork addresses in the
+            same Class A, Class B, and Class C network have the same subnet mask as the one configured on the interface.
+            This contrasts with classless routing protocols that can use a variable subnet mask (VLSM).
+          </p>
+        </div>
+      </div>
+      <div class="pic">
+        <img src="./images/P_img_route/eigrp2.png">
+      </div>
+    </article>
+
+
+    <article class="contact-info">
+      <div class="pic">
+        <img src="./images/P_img_route/eigrp3.png">
+      </div>
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>AS12 EIGRP routing / R1<->S1, R2<->S2 RIP </h2>
+          <p>
+            -Neighbor status monitoring (eigrp neighbor update: clear ip eigrp neighbor)<br>
+            -When the information specified in acl 12 is received from fa0/0 using the offset-list command, the (in)
+            metric is increased by 1.<br>
+            -Routes that are not optimal disappear from the routing table.<br>
+            -Using the routing update filtering policy, only the loopback address and default route are transmitted to the server, and the remaining detailed information is blocked.
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <article class="contact-info">
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>S1<->S2, S3<->S4 routing / AS34 EIGRP routing</h2>
+          <p>
+            -Set so that all S1/2/3/4 can communicate: Redistribute in relay equipment<br>
+            -It is advertised by attaching a tag to the loopback of each router, but remove it when redistributing so that it is not delivered to different domains(Remove based on this tag when redistributing)<br>
+            -Redistribution of rip information in eigrp<br>
+            -Link information not needed for communication is removed from the eigrp routing table with the distribute-list command (only router-id and S1/2/3/4 addresses are allowed)  
+          </p>
+        </div>
+      </div>
+      <div class="pic">
+        <img src="./images/P_img_route/eigrp4.png">
+      </div>
+    </article>
+
+    <!-- OSPF  -->
+
+
+    <article class="contact-info" id="ospf">
+      <div class="pic">
+        <img src="./images/P_img_route/ospf1.png">
+      </div>
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>OSPF(Open Shortest Path First)</h2>
+          <p>
+            OSPF is a routing protocol for Internet Protocol (IP) networks. It uses a link state routing (LSR) algorithm and falls into the group of interior gateway protocols (IGPs), operating within a single autonomous system (AS).<br>
+            All OSPF areas must be physically or virtually linked to the backbone area (= area0). Because ospf is a link state, it knows its own area information accurately, but for other areas, the ABR router should put summary information. Therefore, the ABR router must be connected to the backbone area. 
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <article class="contact-info">
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>HUB & SPOKE</h2>
+          <p>
+            <br>
+            Currently, the state of area0 network is performing multicast update and is in full mesh state. I am trying to make the area0 section a hub&spoke structure. In the hub & spoke structure, the DR must be performed by the hub, and the spokes must never do DR/BDR.<br>
+            When ospf advertises loopback, which is a virtual interface, ospf knows that loopback is not a network because it is a link state. So it advertises as a host. (= 32bit ad)<br>
+            If you want to advertise in the original bit (16bit), set loopback directly in ospf, or redistribute by specifying the target through the access-list.
+          </p>
+        </div>
+      </div>
+      <div class="pic">
+        <img src="./images/P_img_route/ospf2.png">
+      </div>
+    </article>
+
+
+    <article class="contact-info">
+      <div class="pic">
+        <img src="./images/P_img_switch/ospf3.png">
+      </div>
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>OSPF's policy is implemented in border routers</h2>
+          <p>
+            When communicating from R7_lo0 (7.7.7.7) to R1_fa0/0 (1.1.123.1), since R7 to R4 is a single path, it goes through R6 to R4, but in R4 there are two paths. Will you go to R3 or through R5? This decision is determined by LSA-type, not by metric. ospf looks at the LSA-type before looking at the metrics (O> IA> E1> N1> E2> N2)<br>
+            Path selection procedure [1. PBR 2. longest match rule 3. AD --> LSA-type --> 4. metric]
+          </p>
+        </div>
+      </div>
+    </article>
+
+
+    <!-- slogan -->
+
     <article class="contact-slogan">
       <p>
-        We combine planning, architecture, landscape architecture, and interior design as a single professional service to design complete environments that steward natural resources, enhance value for clients, and create communities that endure over time.
+        Detailed GNS3 files, configuration and screenshots of each topology can be downloaded in Google Drive. Please
+        click the source code icon in the lower right corner. Thank you very much for reading my portfolio.
       </p>
     </article>
-    
+
   </div>
-  <a href="#" class="btn-github"><i class="fa fa-github-alt"></i> SOURCE CODE</a>
+  <a href="#" class="btn-github" id="btn-google"><i class="fa fa-google"></i></i> SOURCE CODE</a>
 </body>
 
 </html>

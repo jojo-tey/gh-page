@@ -38,6 +38,10 @@
     display: block;
   }
 
+  .m_invisible {
+    display: none;
+  }
+
   .slogan {
     display: none;
   }

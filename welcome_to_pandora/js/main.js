@@ -373,7 +373,7 @@
     // console.log(sceneInfo[4].objs.images);
 
   }
-  setCanvasImages();
+  // setCanvasImages();
 
 
 
@@ -712,9 +712,6 @@
         objs.context.fillRect(parseInt(calcValues(values.rect2X, currentYOffset)), 0, parseInt(whiteRectWidth), objs.canvas.height);
 
 
-    
-
-
         break;
     }
   }
@@ -799,9 +796,9 @@
 
   window.addEventListener('load', () => {
     setLayout(); // for page refresh (set height)
-    document.body.classList.remove('before-load');
-    setLayout();
-    sceneInfo[0].objs.context.drawImage(sceneInfo[0].objs.videoImages[0], 0, 0);
+        document.body.classList.remove('before-load');
+        setLayout();
+        sceneInfo[0].objs.context.drawImage(sceneInfo[0].objs.videoImages[0], 0, 0);
 
     // for page refresh in the middle 
     let tempYOffset = yOffset;
@@ -819,8 +816,8 @@
     }
 
     window.addEventListener('scroll', () => {
-      yOffset = window.pageYOffset;
-      scrollLoop();
+        yOffset = window.pageYOffset;
+        scrollLoop();
 
       if (!rafState) {
         rafId = requestAnimationFrame(loop);
@@ -835,7 +832,7 @@
     });
 
     window.addEventListener('orientationchange', () => {
-      scrollTo(0, 0);c
+      scrollTo(0, 0);
       setTimeout(() => {
         window.location.reload();
       }, 500);

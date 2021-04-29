@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
+  <title>Project #03 : SWTICH</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <div class="modal project-detail">
+    <div class="header">
+      <div class="header-inner">
+        <a href="#p_top" class="modal-display">+ Project Descriptions #03</a>
+        <a href="#nat" class="modal-display m_invisible"># NAT</a>
+        <a href="#vlan" class="modal-display m_invisible"># VLAN</a>
+        <a href="#svi" class="modal-display m_invisible"># SVI-OSPF</a>
+        <a href="#vtp" class="modal-display m_invisible"># VTP</a>
+        <a href="#stp" class="modal-display m_invisible"># STP</a>
+        <a href="#bpdu" class="modal-display m_invisible"># BPDU</a>
+        <a href="#hsrp" class="modal-display m_invisible"># HSRP</a>
+        <a href="#vrrp" class="modal-display m_invisible"># VRRP</a>
+        <a href="#glbp" class="modal-display m_invisible"># GLBP</a>
+        <a href="#dhcp" class="modal-display m_invisible"># DHCP</a>
+      </div>
+    </div>
+
+
+
+    <div class="contact-main project-main2" id="p_top">
+      <div class="contact-heading">
+        <span>Project #03</span>
+        <h1>GNS3 : SWTICHING</h1>
+      </div>
+    </div>
+    <article class="contact-info">
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>+ Project Descriptions #03</h2>
+          <p>
+            <b>Understanding networks in the IT field is like getting a license to ride a car.<br>
+            By understanding how networks are organized, how packets are routed, how routes are determined, and the
+            various protocols, you can understand the overall behavior of the Web. Therefore, i constructed 11 switching
+            topologies using multiple protocols.</b>
+          </p>
+        </div>
+      </div>
+      <div class="pic project-info">
+        <ul>
+          <li><b>Project</b> : Network Topology for SWITCH</li>
+          <li><b>Completed Date</b> : December 2020</li>
+          <li><b>Architect</b> : Taehee Jo</li>
+          <li><b>Working day</b> : 40+</li>
+          <li><b>Used Programm</b> : GNS3, SecureCRT</li>
+        </ul>
+      </div>
+    </article>
+
+
+
+    <!-- Describe Section -->
+
+
+    <!-- NAT -->
+    <article class="contact-info" id="nat">
+      <div class="pic">
+        <img src="../images/P_img_switch/nat1.png">
+      </div>
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>Advantage of NAT(Network Address Translation)</h2>
+          <p>
+            NAT is a system that converts one public IP to several private IPs. A router with two or more LAN cards acts
+            as an intermediary between the private network and the external network. The router used a lot in the
+            vicinity is a typical NAT system. In addition, the private network is structured so that access from the
+            external network to the internal PC of the private network is impossible unless special settings are made,
+            so the security is strong.
+        </div>
+      </div>
+    </article>
+
+    <article class="contact-info">
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>Theory of NAT</h2>
+          <p>When the first sender delivers the packet to the gateway, SRC_IP is filled with the sender's address inside
+            the private network. For communication, the gateway receives the packet and randomly modifies the IP address
+            in the packet to its public IP and sends it to the destination. The recipient who receives the packet will
+            send the packet with the public IP inserted by the gateway in the destination IP address, and the packet
+            will reach the gateway.
+          </p>
+        </div>
+      </div>
+      <div class="pic">
+        <img src="../images/P_img_switch/nat2.png">
+      </div>
+    </article>
+
+    <!-- VLAN  -->
+
+    <article class="contact-info" id="vlan">
+      <div class="pic">
+        <img src="../images/P_img_switch/vlan1.png">
+      </div>
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>VLAN(Virtual Local Area Network)</h2>
+          <p>
+            As a function supported by a switch, it is to create multiple networks in one switch. Multiple networks
+            means that broadcast domains are divided. When networks are divided in this way, communication between each
+            other becomes possible only through routers.
+          </p>
+        </div>
+      </div>
+    </article>
+    <article class="contact-info">
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>This is similar concept as NAT</h2>
+          <p>
+            Broadcast domains of hosts connected to the same switch can be virtually divided, or broadcast domains of
+            hosts connected to different switches can be combined. Like NAT, when internal vlans go out, the switch
+            converts the vlan into one public address and transmits it. By default, the unused vlan number is put in the
+            distribution switch so that other vlans other than the licensed vlan cannot enter.
+          </p>
+        </div>
+      </div>
+      <div class="pic">
+        <img src="../images/P_img_switch/vlan2.png">
+      </div>
+    </article>
+
+    <article class="contact-info">
+      <div class="pic">
+        <img src="../images/P_img_switch/vlan3.png">
+      </div>
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>Trunking</h2>
+          <p>
+            Originally, one link per VLAN should be allocated, but since too many links are required in that case,
+            trunking is used so that all VLANs can move through one link. At this time, tag each vlan so that it can be
+            properly distributed at the destination.
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <!-- SVI-OSPF -->
+
+    <article class="contact-info" id="svi">
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>SVI can be defined as a vlan with IP concept</h2>
+          <p>
+            If SVI communicates with the existing Trunk and Allow different VLANs,this time, the other VLANs communicate
+            with the router. IP communication is performed between the router and the L3 Switch. You cannot use Trunk or
+            Allow. SVI allows communication between VLANs using the router's Routing Protocol. It's a technology that
+            makes it possible.
+          </p>
+        </div>
+      </div>
+      <div class="pic">
+        <img src="../images/P_img_switch/svi1.png">
+      </div>
+    </article>
+
+
+    <article class="contact-info">
+      <div class="pic">
+        <img src="../images/P_img_switch/svi2.png">
+      </div>
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>Condition of OSPF Neighbor</h2>
+          <p>
+            -Equipment with the same network ID<br>
+            -Router ID must be different<br>
+            -hello interval must be the same<br>
+            -The network type must be the same<br>
+            -area must be the same<br>
+            -certification<br>
+            -MTU size -> ip ospf mtu-ignore -> system mtu must be set manually
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <!-- VTP -->
+
+    <article class="contact-info" id="vtp">
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>VTP(vlan trunking protocol)-Protocol created by cisco to manage VLAN</h2>
+          <p>
+            -Server <-> Client concept <br>
+              -Receives vlan configuration information, but does not receive port information <br>
+              -Minimization of management resources (set only one and sprinkle with synchronization)<br>
+              -purpose 2. Minimize database storage resources of vlan configuration information<br>
+
+          </p>
+        </div>
+      </div>
+      <div class="pic">
+        <img src="../images/P_img_switch/vtp1.png">
+      </div>
+    </article>
+
+
+    <article class="contact-info">
+      <div class="pic">
+        <img src="../images/P_img_switch/vtp2.png">
+      </div>
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>Condition of VTP</h2>
+          <p>
+            1. Only cisco<br>
+            2. Must be connected to trunk<br>
+            3. The vtp domain must be the same (only communication between the same ones)<br>
+            4. The vtp version must be the same<br>
+            5. vtp password<br>
+            6. vtp revision (number of updates)<br>
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <article class="contact-info">
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>VTP MODE</h2>
+          <p>
+            <b>Server : </b>Creation, modification, deletion possible, revision number increases each time it is set
+            (information exchange -> synchronization)<br>
+            If the revision number is the highest, it becomes a server -> If a new switch is not initialized, the
+            network may be damaged.<br>
+            <b>Client : </b>Creation, modification, deletion impossible, (forward -> synchronization)<br>
+            <b>Transparent : </b>Can create, edit, and delete (only forward other kids information)<br>
+          </p>
+        </div>
+      </div>
+      <div class="pic">
+        <img src="../images/P_img_switch/vtp3.png">
+      </div>
+    </article>
+
+    <!-- STP  -->
+
+
+    <article class="contact-info" id="stp">
+      <div class="pic">
+        <img src="../images/P_img_switch/stp1.png">
+      </div>
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>STP(Spanning Tree Protocol)</h2>
+          <p>
+            <b>pvst+(cisco):</b> per vlan spanning tree<br>
+            Physically connect switches in a ring structure and create a logical tree structure to avoid loops.<br>
+            L2 traffic does not have TTL (Time To Live), so it loops infinitely when looping occurs.<br>
+            L3 traffic has TTL (Time To Live), so there is no infinite loop.
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <article class="contact-info">
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>Block port adjustment : Set different path each vlan to distribute the load, or unified management of
+            failure points through one path to reduce management resources</h2>
+          <p>
+            -> When the switch is connected in a loop structure, a BPDU message is generated every 2 seconds <br>
+            -> BPDU( briedge id / priority + MAC address)<br>
+            -> cisco priority default(32768) + vlan id (per vlan)<br>
+            -> lowest mac address<br>
+            -> Switches elected as rootbridge declare all their ports as DP(Designated Port)<br>
+            -> In the non-rootbridge, the port close to the root is declared as RP(root port)
+          </p>
+        </div>
+      </div>
+      <div class="pic">
+        <img src="../images/P_img_switch/stp2.png">
+      </div>
+    </article>
+
+
+    <article class="contact-info">
+      <div class="pic">
+        <img src="../images/P_img_switch/stp3.png">
+      </div>
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>RSTP(Rapid Spanning Tree Protocol)</h2>
+          <p>
+            It shortens the convergence time (the time it takes to operate it normally when the state of the network
+            changes), the disadvantage of STP (802.1D).<br>
+            case1 : If the port directly connected to the switch with blk goes down
+            listen 15 seconds-learn 15 seconds after blk opens -> forward <br>
+            case2 : If a port that is not directly connected to the switch that has blk goes down
+            Blk opens immediately<br><br>
+
+            *Uplinkfast -> set on the switch with blk
+            If set, the active port replaces immediately when the connection is lost.
+          </p>
+        </div>
+      </div>
+    </article>
+
+    <!-- BPDU load balancing -->
+
+    <article class="contact-info" id="bpdu">
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>BPDU is one of protection for STP security </h2>
+          <p>
+            Compare BridgeID to get root. So how do you know the other party's BridgeID? The BPDU plays its role. The
+            BPDU between each bridge is compared, and the place with the lowest Bridge ID becomes the root.The BPDU is
+            transmitted by the switch every 2 seconds and has the following structure.
+          </p>
+        </div>
+      </div>
+      <div class="pic">
+        <img src="../images/P_img_switch/bpdu1.png">
+      </div>
+    </article>
+
+
+    <article class="contact-info">
+      <div class="pic">
+        <img src="../images/P_img_switch/bpdu2.png">
+      </div>
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>Set each vlan port-priority</h2>
+          <p>
+            You can distribute the load by manually assigning different priorities in distribute switch to each vlan<br>
+            int fa 1/1 : spanning-tree vlan 10 port-priority 0<br>
+            int fa 1/2 : spanning-tree vlan 20 port-priority 0<br>
+            int fa 1/3 : spanning-tree vlan 30 port-priority 0<br>
+            int fa 1/4 : spanning-tree vlan 40 port-priority 0<br>
+            => each port has different BLK port<br>
+            => each port learn MAC address for priority vlan
+          </p>
+
+        </div>
+      </div>
+    </article>
+
+<!-- HSRP & GROUP -->
+
+<article class="contact-info" id="hsrp">
+  <div class="center-parent">
+    <div class="center-child">
+      <h2>HSRP(Hot Standby Router Protocol) </h2>
+      <p>
+        When a PC sends a packet to a switch in an environment with two gateways, the switch floods both gates.
+HSRP operates between the two gateways and manages the MAC table by determining who is active and who is the standby, and when active goes down, the standby manages the MAC table.
+HSRPv1 and CGMP cannot be set at the same time
+HSRPv2 and CGMP can be set at the same time
+      </p>
+    </div>
+  </div>
+  <div class="pic">
+    <img src="../images/P_img_switch/hsrp1.png">
+  </div>
+</article>
+
+
+<article class="contact-info">
+  <div class="pic">
+    <img src="../images/P_img_switch/hsrp2.png">
+  </div>
+  <div class="center-parent">
+    <div class="center-child">
+      <h2>How to manage packets that the L2 switch does not understand and floods?</h2>
+      <p>
+        1. Broadcast : vlan, rate limit<br>
+        2. Multicast : ICMP snooping -> CGMP(Cisco version of ICMP) <br>
+        3. Unknown Unicast : This occurs because the mac aging time and arp aging time of the mac table are different -> Align two times, statically make the mac<br>
+        <br>
+        *As you see in the picture, with preempt option standby goes to active automatically when uplink is down 
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<article class="contact-info">
+  <div class="center-parent">
+    <div class="center-child">
+      <h2>HSRP as group </h2>
+      <p>
+        If multiple hosts belong to the same HSRP group, a lot of load will occur in the active router. Because everyone is trying to communicate with the Active Router. In this case, if the HSRP group is divided and the active router is set differently, the router that communicates with each group will be different and the load can be reduced.
+      </p>
+    </div>
+  </div>
+  <div class="pic">
+    <img src="../images/P_img_switch/hsrp3.png">
+  </div>
+</article>
+
+<!-- VRRP -->
+
+
+<article class="contact-info" id="vrrp">
+  <div class="pic">
+    <img src="../images/P_img_switch/vrrp1.png">
+  </div>
+  <div class="center-parent">
+    <div class="center-child">
+      <h2>VRRP(Virtual Router Redundancy Protocol)</h2>
+      <p>
+        Unlike HSRP, which uses an address not set in Interface as Virtual IP, VRRP can set Virtual IP with real IP set in Interface(Of course, you can use a separate Virtual IP)<br>
+        -Master router selection priority (HSRP active = VRRP master), (HSRP standby = VRRP backup)<br>
+          1. Router where the configured VIP is the actual interface ip <br>
+          2. Router with high priority *** (default value = 100) <br>
+          3. Router with high IP address
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<article class="contact-info">
+  <div class="center-parent">
+    <div class="center-child">
+      <h2>In the master router, the vrrp advertisement period is set with the "timers advertise" command</h2>
+      <p>Then this value is notified to the backup router. The backup router learns the vrrp advertisement cycle received from the master router with the "timers learn" command. If the backup router directly sets the cycle with the advertise command rather than the learn command, it becomes the master itself. That is, vrrp is not properly configured.
+      </p>
+    </div>
+  </div>
+  <div class="pic">
+    <img src="../images/P_img_switch/vrrp2.png">
+  </div>
+</article>
+
+    
+<!-- GLBP -->
+
+
+
+<article class="contact-info" id="glbp">
+  <div class="pic">
+    <img src="../images/P_img_switch/glbp1.png">
+  </div>
+  <div class="center-parent">
+    <div class="center-child">
+      <h2>GLBP(Virtual Router Redundancy Protocol)</h2>
+      <p>
+        GLBP is a CISCO redundancy protocol that enhances the function of HSRP. GLBP, an extension of HSRP, dynamically enforces virtual ip assignments and assigns multiple virtual mac addresses to GLBP group members. GLBP provides load balancing for multiple routers using a single virtual IP address and multiple MAC addresses. The hosts are configured with the same virtual IP address, and packet switching is possible for all routers in the virtual router group at the same time.
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<article class="contact-info">
+  <div class="center-parent">
+    <div class="center-child">
+      <h2>The status of a group member is one of active, standby, and listening.</h2>
+      <p>
+        Members of the GLBP group elect AVG and standby virtual gateway (SVG). If there are more than 3 members, the remaining members are in the listening state. When AVG goes down, SVG takes over. Then, among the members in the listening state, SVG is again elected. Even if AVG comes back to life or a new member with high priority appears, AVG and SVG will not change unless preempt is used. AVG allocates virtual mac addresses to each member of the GLBP group. HSRP has one virtual mac in a virtual ip, but GLBP assigns one virtual mac address to each member. However, up to 4 virtual macs can be allocated per group in GLBP.
+      </p>
+    </div>
+  </div>
+  <div class="pic">
+    <img src="../images/P_img_switch/glbp2.png">
+  </div>
+</article>
+
+
+<!-- DHCP -->
+
+
+<article class="contact-info" id="dhcp">
+  <div class="pic">
+    <img src="../images/P_img_switch/dhcp1.png">
+  </div>
+  <div class="center-parent">
+    <div class="center-child">
+      <h2>DHCP(Dynamic Host Configuration Protocol)</h2>
+      <p>
+        There is 4 DHCP message<br>
+        <b>Discovery : </b>Broadcast message from client to server. Basically, It should be configured in the same vlan. But then it has weakness of security and increased computational load. So assign client and server to different vlans, configure dhcp relay agent, change to unicast in the middle, and deliver to server<br>
+        <b>agent : </b> L3 function(command: ip helper address), still normal dhcp cannot be controlled(Weak against dhcp starvation attack) -> [Solution 1-port security, 2-user authentication (ieee802.1x-dot1x)]<br>
+        <b>offer : </b>server's response to discovery (if there are multiple servers) -> dhcp snooping is used to distinguish unauthorized servers (all ports become untrusted-messages from servers coming from all ports are blocked) -> Build in agent -> Directly declare the port where the server message should come in.<br>
+        <b>request : </b> [1. Client's response to offer / 2. Request message]<br>
+        <b>ack : </b>Server's response to request
+      </p>
+
+    </div>
+  </div>
+</article>
+
+<article class="contact-info">
+  <div class="center-parent">
+    <div class="center-child">
+      <h2>Rental period renewal</h2>
+      <p>
+        When the first renewal is attempted, the renewal is attempted when 50% of the rental period remains. The client directly transmits in the form of a DHCPQUEST message.
+        If the server transmits affirmative ACK, it transmits the updated parameters along with the new IP.
+        When the server is turned off or cannot be received, the client receives a message indicating that it has not been updated.
+        However, since 50% of the rental period is still remaining, the use of TCP/IP is maintained.
+        When 87.5% of the rental period expires, the second renewal is attempted.
+        If the second renewal fails, the lease period expires or when DHCPNACK is received, the DHCP Client stops using the IP address and has to go through the above 4 steps again to request an IP again.
+      </p>
+    </div>
+  </div>
+  <div class="pic">
+    <img src="../images/P_img_switch/dhcp2.png">
+  </div>
+</article>
+
+
+<article class="contact-info">
+  <div class="pic">
+    <img src="../images/P_img_switch/dhcp3.png">
+  </div>
+  <div class="center-parent">
+    <div class="center-child">
+      <p>
+        <b>1.</b> dhcp relay agent <br>
+        <b>2.</b> NAC: port-security. dot1x ...<br>
+        <b>3.</b> dhcp rate limit <br>
+        <b>4.</b> dhcp snooping -> binding <br>
+        <b>5.</b> dhcp option 82 [Authentication between dhcp server and dhcp relay agent] Unauthorized dhcp client using unauthorized ip <br>
+        <b>6.</b> ip source guard [not assigned ip from dhcp server Unauthorized address communication is not possible] <br>
+        <b>7.</b> arp inspection: Block when attempting to change the mapping of IP address and mac assigned from dhcp server.
+      </p>
+
+    </div>
+  </div>
+</article>
+
+    <!-- slogan -->
+
+    <article class="contact-slogan">
+      <p>
+        Detailed GNS3 files, configuration and screenshots of each topology can be downloaded in Google Drive. Please click the source code icon in the lower right corner. Thank you very much for reading my portfolio.
+      </p>
+    </article>
+
+  </div>
+  <a href="https://drive.google.com/drive/folders/1P3kWMg8-GlnFPpLrqKnNSGqkp_JkbK7B?usp=sharing" class="btn-github" id="btn-google" target="_blank"><i class="fa fa-google"></i></i> SOURCE CODE</a>
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1.0">
+  <title>Project #01 : Djfans</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <div class="modal project-detail">
+    <div class="header">
+      <div class="header-inner">
+        <a href="#p_top" class="modal-display">+ Project Descriptions #01</a>
+        <a href="#dev" class="modal-display m_invisible"># Develpoment</a>
+        <a href="#deploy" class="modal-display m_invisible"># Deploy</a>
+        <a href="#server" class="modal-display m_invisible"># Server</a>
+      </div>
+    </div>
+
+
+
+    <div class="contact-main project-main1" id="p_top">
+      <div class="contact-heading">
+        <span>Project #01</span>
+        <h1>Djfans : Onlyfans clone project</h1>
+      </div>
+    </div>
+    <article class="contact-info">
+      <div class="center-parent">
+        <div class="center-child">
+          <h2>+ Project Descriptions #01</h2>
+          <p>
+            <b>I created a simple onlyfans site using Django. During the deployment process, it was containerized through Docker. I linked the NGINX server and Django application server through Docker Compose. I created AWS resources using Terraform. Build automation was done through the linkage between Docker Hub and GitHub. I plan to automate deployment by running Jenkins containers on the server.</b>
+          </p>
+        </div>
+      </div>
+      <div class="pic project-info">
+        <ul>
+          <li><b>Project</b> : Django fans</li>
+          <li><b>Completed Date</b> : April 2021</li>
+          <li><b>Architect</b> : Taehee Jo</li>
+          <li><b>Working day</b> : 20+</li>
+          <li><b>Used skill</b> : Django, Docker, AWS</li>
+        </ul>
+      </div>
+    </article>
+
+
+
+    <!-- Describe Section -->
+
+    <article class="contact-slogan">
+      <a href="https://taeheejo.link/" target="_blank"><p>
+        <i class="fa fa-rocket"> LINK TO DEMO PAGE </i>
+        </a>
+        <br>
+        <b>ID :</b> tester<br>
+        <b>PW :</b> tester
+      </p>
+    </article>
+
+
+    <!-- Dev -->
+    
+    <h1 class="p-head" id="dev"># Development</h1>
+    <article class="contact-info" >
+      <div class="pic">
+        <img src="../images/index.png">
+      </div>
+      <div class="center-parent">
+        <div class="center-child">
+          <p>
+            <b>Subscription & Post</b><br>Configured to update the news feed only as subscribed users post<p>
+        </div>
+      </div>
+    </article>
+
+    <article class="contact-info">
+      <div class="center-parent">
+        <div class="center-child">
+          <p>
+            <b>Subscription & Post</b><br> Configured to update the news feed only as subscribed users post<p>
+        </div>
+      </div>
+      <div class="pic-r">
+        <img src="../images/subscription.png">
+      </div>
+    </article>
+
+    <article class="contact-info">
+      <div class="pic">
+        <img src="../images/chat.png">
+      </div>
+      <div class="center-parent">
+        <div class="center-child">
+          <p>
+            <b>Direct Message</b><br> User can message to subscribed user<p>
+        </div>
+      </div>
+    </article>
+
+    <article class="contact-info">
+      <div class="center-parent">
+        <div class="center-child">
+          <p>
+            <b>Notification</b><br> Notify users when new subscriptions occur<p>
+        </div>
+      </div>
+      <div class="pic-r">
+        <img src="../images/notification.png">
+      </div>
+    </article>
+
+    <article class="contact-info">
+      <div class="pic">
+        <img src="../images/statics.png">
+      </div>
+      <div class="center-parent">
+        <div class="center-child">
+          <p>
+            <b>Static & Media</b><br> Static file and media file management using S3 bucket as a backend<p>
+        </div>
+      </div>
+    </article>
+
+    <h1 class="p-head" id="deploy"># Deploy</h1>
+    <article class="contact-info">
+      <div class="center-parent">
+        <div class="center-child">
+          <p>
+            <b>- Webserver :</b> Integration of nginx web server and Django application through gunicorn<br>
+            <b>- Database :</b> AWS RDS Minimize database design and management resources using AWS RDS<br>
+            <b>- Backend :</b> S3 Integrated management of staticfile and mediafile through S3 bucket as backend <br>
+            <b>- Dockerize :</b> Build automation Packaging the app in container, build automation by linking github and docker hub
+        <p>
+        </div>
+      </div>
+      <div class="pic">
+        <img src="../images/skills.png">
+      </div>
+    </article>
+
+    <h1 class="p-head" id="server"># Server management</h1>
+    <article class="contact-info">
+      <div class="center-parent">
+        <div class="center-child">
+          <p>
+            <b>- Secret value management :</b> By setting the environment variable reference in the container, it is possible to manage secret value management on the server side at once.<br>
+            <b>- VPC and Security group :</b> Secure data storage by separating the database and the S3 bucket from the EC2 instance and placing it in a different security group.<br>
+            <b>- Https redirect :</b> Redirecting to https by placing an application load balancer between the EC2 instance and the internet gateway <br>
+          <p>
+        </div>
+      </div>
+      <div class="pic">
+        <img src="../images/diagram.png">
+      </div>
+    </article>
+
+    
+
+    <article class="contact-info">
+      <div class="pic">
+        <img src="../images/server-manage.png">
+      </div>
+      <div class="center-parent">
+        <div class="center-child">
+          <p>
+            <b>- Infrastructure as code :</b> Resource management through Terraform makes it easy to increase/decrease, version control, and reuse servers.<br>
+            <b>- CI/CD automation (Working on it) :</b> Stage-by-stage setup through the pipeline. Set to automatically build and deploy at the same time as commit.<br>
+        <p>
+        </div>
+      </div>
+      
+    </article>
+    
+
+
+    <article class="contact-slogan">
+      <p>
+        Source code and more details you can find on my github.<br>
+        Thank you so much for read my project. I wish you always best luck!
+      </p>
+    </article>
+
+  </div>
+  <a href="https://github.com/jojo-tey/Django_fans" class="btn-github" id="btn-github" target="_blank"><i class="fa fa-github"></i></i> SOURCE CODE</a>
+</body>
+
+</html>

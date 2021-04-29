@@ -6,6 +6,8 @@ Here is my portfolio page.
 It was written in html/css/basic javascript, and jquery plug-in was also used.
 Several projects and introductions about myself were collected and presented in one place.
 
+## [LINK TO DEMO PAGE](https://codejoy.de/)
+
 ## Page structure
 
 It is divided into five sections
@@ -17,7 +19,7 @@ It is divided into five sections
 
 > Contact information and project detail pages were separately created as sub pages.
 
-## Characteristic
+## Focus point
 
 - CSS animation techniques were actively used to give a dynamic feel.
 - A presentation-type page structure was created using JQuery plug-in.
